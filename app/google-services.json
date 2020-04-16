@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "271060449009",
+    "firebase_url": "https://lavishly-61aa3.firebaseio.com",
+    "project_id": "lavishly-61aa3",
+    "storage_bucket": "lavishly-61aa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271060449009:android:71e3ef84f2833f4d",
+        "android_client_info": {
+          "package_name": "com.lavishly.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271060449009-0p661tgp6df72sa291r97l58ttcoclrq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lavishly.android",
+            "certificate_hash": "3ae56d1c6e107fbb2229d5737eb853a9901a792a"
+          }
+        },
+        {
+          "client_id": "271060449009-o9urr1vatu4omnsm72kesro7n3tbogmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhSNUfaTnBYTc8xovO9FNXFJihtr_jlc8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271060449009-o9urr1vatu4omnsm72kesro7n3tbogmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

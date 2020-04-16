@@ -1,0 +1,134 @@
+<resources>
+    <string name="app_name">Lavishly</string>
+    <string name="facebook_app_id">267424530494122</string>
+    <string name="fb_login_protocol_scheme">fb267424530494122</string>
+
+
+    <string name="facebook_status_fmt">Facebook User: %s</string>
+    <string name="facebook_title_text">Facebook Login</string>
+    <string name="label_facebook_login">Firebase + Facebook Login</string>
+    <string name="desc_facebook_login">Use a Facebook Login credential to authenticate with Firebase.</string>
+
+
+    <string name="hint_user_id">User ID</string>
+    <string name="get_custom_token">Get Token</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="send_link">Send Link</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="loading">Loading…</string>
+    <string name="custom_token">Custom Token</string>
+    <string name="signed_in">Signed In</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="token_null">Token: null</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="start_phone_auth">Start</string>
+    <string name="verify_phone_auth">Verify</string>
+    <string name="resend_phone_auth">Resend</string>
+    <string name="hint_phone_number">Phone Number</string>
+    <string name="hint_verification_code">Verification Code</string>
+    <string name="status_code_sent">Code Sent</string>
+    <string name="status_verification_failed">Verification failed</string>
+    <string name="status_verification_succeeded">Verification succeeded</string>
+    <string name="status_sign_in_failed">Sign-in failed</string>
+    <string name="instant_validation">(instant validation)</string>
+
+
+    <string name="label_firebase_ui">FirebaseUI Auth</string>
+    <string name="desc_firebase_ui">Use the FirebaseUI-Android library to authenticate with Firebase.</string>
+
+    <string name="firebase_status_fmt">Firebase User: %s</string>
+    <string name="firebase_user_management">Firebase User Management</string>
+
+    <string name="firebaseui_status_fmt">Firebase User: %s</string>
+    <string name="firebaseui_title_text">FirebaseUI Auth</string>
+
+    <string name="id_fmt">User ID: %s</string>
+    <string name="email_fmt">Email: %s</string>
+
+
+
+
+    <string-array name="TitleArrayFancy">
+        <item>Motivation</item>
+        <item>Energy</item>
+        <item>Courage</item>
+        <item>Cheerfulness</item>
+        <item>Excitement</item>
+        <item>Confidence</item>
+        <item>Positivity</item>
+        <item>Happiness</item>
+        <item>Love</item>
+        <item>Prosperity</item>
+        <item>Charm</item>
+        <item>Peace</item>
+        <item>Relaxation</item>
+    </string-array>
+
+    <string-array name="TitleArrayPersonage">
+        <item>Powerful</item>
+        <item>Successful</item>
+        <item>Rich</item>
+        <item>Leader</item>
+        <item>Valuable</item>
+        <item>Charismatic</item>
+        <item>Wise</item>
+        <item>Impressive</item>
+        <item>Fortunate</item>
+        <item>Fulfilled</item>
+        <item>Healthy</item>
+        <item>Optimistic</item>
+        <item>Blessed</item>
+        <item>Grateful</item>
+        <item>Generous</item>
+        <item>Peaceful</item>
+    </string-array>
+
+    <string-array name="DescriptionArrayFancy">
+        <item>Get More Motivation</item>
+        <item>Get More Energy</item>
+        <item>Get More Courage</item>
+        <item>Get More Cheerfulness</item>
+        <item>Get More Excitement</item>
+        <item>Get More Confidence</item>
+        <item>Get More Positivity</item>
+        <item>Get More Happiness</item>
+        <item>Get More Love</item>
+        <item>Get More Prosperity</item>
+        <item>Get More Charm</item>
+        <item>Get More Peace</item>
+        <item>Get More Relaxation</item>
+    </string-array>
+
+
+
+    <string-array name="DescriptionArrayPersonage">
+        <item> Become Powerful</item>
+        <item> Become Successful</item>
+        <item> Become Rich</item>
+        <item> Become A Leader</item>
+        <item> Become Valuable</item>
+        <item> Become Charismatic</item>
+        <item> Become Wise</item>
+        <item> Become Impressive</item>
+        <item> Become Fortunate</item>
+        <item> Become Fulfilled</item>
+        <item> Become Healthy</item>
+        <item> Become Optimistic</item>
+        <item> Become Blessed</item>
+        <item> Become Grateful</item>
+        <item> Become Generous</item>
+        <item> Become Peaceful</item>
+    </string-array>
+
+
+
+
+
+
+</resources>
