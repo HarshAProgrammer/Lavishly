@@ -12,7 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.lavishly.android.R;
 import com.lavishly.android.SubsidiaryActivities.ActivityAdapter.RecyclerAdapterPersonage;
@@ -32,6 +34,8 @@ public class FragmentTwoPersonage extends Fragment {
     private ListView personageListView;
     public static SharedPreferences sharedPersonagePreferences;
     public static String selectedPersonageItem;
+    TextView titlePersonage,descriptionPersonage;
+    ImageView imageViewPersonage;
 
     public static FragmentTwoPersonage newInstance() {
         return new FragmentTwoPersonage();
@@ -47,7 +51,7 @@ public class FragmentTwoPersonage extends Fragment {
         RecyclerView personageRecyclerView = (RecyclerView) view.findViewById(R.id.rvPersonage);
         personageListView = (ListView) view.findViewById(R.id.lvPersonage);
 
-        RecyclerAdapterPersonage recyclerAdapterPersonage = new RecyclerAdapterPersonage(getContext(),titlePersonage,descriptionPersoange,);
+        RecyclerAdapterPersonage recyclerAdapterPersonage = new RecyclerAdapterPersonage(getContext(),titlePersonage,descriptionPersonage,imageViewPersonage);
        return view;
     }
 
@@ -80,8 +84,11 @@ public class FragmentTwoPersonage extends Fragment {
 
     }
     private void setupPersonageUIViews() {
-
-        sharedPersonagePreferences =  getSharedPreferences("PersonageItem", MODE_PRIVATE);
+        Context context = getActivity();
+//        sharedPersonagePreferences =  getSharedPreferences("PersonageItem", MODE_PRIVATE);
+        assert context != null;
+        sharedPersonagePreferences = context.getSharedPreferences(
+                "PersonageItem", Context.MODE_PRIVATE);
     }
 
     private void setupListViewPersonage() {

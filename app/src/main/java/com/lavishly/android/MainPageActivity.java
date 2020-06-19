@@ -137,8 +137,11 @@ public class MainPageActivity extends AppCompatActivity implements TabLayout.OnT
         tabLayoutMainPage.getTabAt(0).setIcon(R.drawable.fancy_main);
         tabLayoutMainPage.getTabAt(1).setIcon(R.drawable.personage_main);
 
-        ActionBar actionBar = getSupportActionBar();
+//        android.support.v7.app.ActionBar actionBar =getSupportActionBar();
+//        ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
+        androidx.appcompat.app.ActionBar actionBar =getSupportActionBar();
         assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setElevation(3);
 
     }
