@@ -1,6 +1,8 @@
 package com.lavishly.android;
 
+import android.app.ActionBar;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -8,27 +10,28 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.NotificationCompat;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 
+
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 
-import android.view.Display;
+
+
 import android.view.View;
 
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.support.v4.view.ViewPager;
 
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NotificationCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import com.facebook.AccessToken;
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,6 +51,7 @@ import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
+
 
 import java.util.Calendar;
 
@@ -71,13 +75,12 @@ public class MainPageActivity extends AppCompatActivity implements TabLayout.OnT
 
 
     private AccessToken accessToken;
-    private String DisplayName;
-    private String DisplayEmail;
 
 
     private Toolbar toolbar;
     private ListView listView;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +117,7 @@ public class MainPageActivity extends AppCompatActivity implements TabLayout.OnT
         getSupportActionBar().setTitle("Lavishly");
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setupViewPager() {
 
 
@@ -242,12 +246,14 @@ public class MainPageActivity extends AppCompatActivity implements TabLayout.OnT
 
         FirebaseUser user = mAuth.getCurrentUser();
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
+        String displayName;
+        String displayEmail;
         if (user != null) {
-            DisplayName = user.getDisplayName().toString().trim();
-            DisplayEmail = user.getEmail().toString().trim();
+            displayName = user.getDisplayName().toString().trim();
+            displayEmail = user.getEmail().toString().trim();
         } else {
-            DisplayName = "Lavishly";
-            DisplayEmail = "Version 1.0";
+            displayName = "Lavishly";
+            displayEmail = "Version 1.0";
         }
 
 
@@ -256,7 +262,7 @@ public class MainPageActivity extends AppCompatActivity implements TabLayout.OnT
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.header)
                 .addProfiles(
-                        new ProfileDrawerItem().withName(DisplayName).withEmail(DisplayEmail).withIcon(getResources().getDrawable(R.drawable.profile))
+                        new ProfileDrawerItem().withName(displayName).withEmail(displayEmail).withIcon(getResources().getDrawable(R.drawable.profile))
                 )
                 .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
                     @Override
