@@ -28,15 +28,13 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class FragmentTwoPersonage extends Fragment {
 
-    private RecyclerView PersonageRecyclerView;
     private OnFragmentInteractionListenerPersonage mListener;
     private ListView personageListView;
     public static SharedPreferences sharedPersonagePreferences;
     public static String selectedPersonageItem;
 
     public static FragmentTwoPersonage newInstance() {
-        FragmentTwoPersonage fragmentTwoPersonage = new FragmentTwoPersonage();
-        return fragmentTwoPersonage;
+        return new FragmentTwoPersonage();
         // Required empty public constructor
     }
 
@@ -46,7 +44,7 @@ public class FragmentTwoPersonage extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.activity_personage, container, false);
-       PersonageRecyclerView = (RecyclerView) view.findViewById(R.id.rvPersonage);
+        RecyclerView personageRecyclerView = (RecyclerView) view.findViewById(R.id.rvPersonage);
         personageListView = (ListView) view.findViewById(R.id.lvPersonage);
 
         RecyclerAdapterPersonage recyclerAdapterPersonage = new RecyclerAdapterPersonage(getContext(),titlePersonage,descriptionPersoange,);
