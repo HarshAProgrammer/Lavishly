@@ -52,11 +52,11 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-        <activity android:name=".FancyActivity" />
-        <activity android:name=".PersonageActivity" />
+        <activity android:name=".SubsidiaryActivities.FancyActivity" />
+        <activity android:name=".SubsidiaryActivities.PersonageActivity" />
         <activity android:name=".ProfileActivity" />
 
-        <activity android:name=".AppIntroActivity"></activity>
+        <activity android:name=".AppIntroActivity" />
     </application>
 
 </manifest>

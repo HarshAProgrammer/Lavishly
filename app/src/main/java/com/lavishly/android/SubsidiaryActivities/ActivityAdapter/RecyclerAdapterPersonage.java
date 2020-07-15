@@ -15,9 +15,9 @@ import com.lavishly.android.R;
 public class RecyclerAdapterPersonage extends RecyclerView.Adapter<RecyclerAdapterPersonage.PersonageViewHolder> {
 
     private Context mContext;
-    private String[] titlePersonageArray;
-    private String[] descriptionPersonageArray;
-    private TextView titlePersonage, descriptionPersonage;
+    String[] titlePersonageArray;
+    String[] descriptionPersonageArray;
+    TextView titlePersonage, descriptionPersonage;
     private ImageView imageViewPersonage;
 
 

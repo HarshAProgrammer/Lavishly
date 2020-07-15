@@ -4,8 +4,11 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 
 import androidx.annotation.NonNull;
+
 import com.google.android.material.snackbar.Snackbar;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,15 +36,13 @@ public class RegistrationActivity extends AppCompatActivity {
     private TextView userLogin;
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-    String Email,PhoneNo,Password,Name;
-
+    String Email, PhoneNo, Password, Name;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -54,17 +55,6 @@ public class RegistrationActivity extends AppCompatActivity {
         userPassword = (EditText) findViewById(R.id.etUserPassword);
         regButton = (Button) findViewById(R.id.btnRegister);
         userLogin = (TextView) findViewById(R.id.tvUserLogin);
-
-
-
-
-
-
-
-
-
-
-
 
 
         regButton.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +85,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
                             } else {
                                 progressDialog.dismiss();
-                                Snackbar registerIfFailureSnackBar = Snackbar.make(findViewById(R.id.activity_registration),"Registration Failed",Snackbar.LENGTH_LONG);
+                                Snackbar registerIfFailureSnackBar = Snackbar.make(findViewById(R.id.activity_registration), "Registration Failed", Snackbar.LENGTH_LONG);
                                 registerIfFailureSnackBar.show();
                             }
 
@@ -105,31 +95,20 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
 
 
-                userLogin.setOnClickListener(new View.OnClickListener() {
-                    @Override
-
-
-                    public void onClick(View v) {
-                        Intent openLoginActivityFromRegistration = new Intent(RegistrationActivity.this, LoginActivity.class);
-                        startActivity(openLoginActivityFromRegistration);
-                    }
-                });
-
-
-
             }
-
-
 
 
         });
 
+        userLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
 
 
-
-
-
-
+            public void onClick(View v) {
+                Intent openLoginActivityFromRegistration = new Intent(RegistrationActivity.this, LoginActivity.class);
+                startActivity(openLoginActivityFromRegistration);
+            }
+        });
 
 
     }
@@ -144,11 +123,11 @@ public class RegistrationActivity extends AppCompatActivity {
         PhoneNo = userPhoneNo.getText().toString();
 
 
-        if (Name.isEmpty() || Password.isEmpty() || Email.isEmpty()){
-            Snackbar registerValidateSuccessSnackBar = Snackbar.make(findViewById(R.id.activity_registration),"Please Enter All The Details",Snackbar.LENGTH_LONG);
+        if (Name.isEmpty() || Password.isEmpty() || Email.isEmpty()) {
+            Snackbar registerValidateSuccessSnackBar = Snackbar.make(findViewById(R.id.activity_registration), "Please Enter All The Details", Snackbar.LENGTH_LONG);
             registerValidateSuccessSnackBar.show();
 
-        }else {
+        } else {
             result = true;
         }
 
@@ -158,25 +137,24 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
-
-    private void sendEmailVerification(){
+    private void sendEmailVerification() {
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
-        if(firebaseUser!=null){
+        if (firebaseUser != null) {
             firebaseUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         sendUserData();
-                        Snackbar registerSendEmailVerificationSuccessSnackBarOne = Snackbar.make(findViewById(R.id.activity_registration),"Successfully Registered",Snackbar.LENGTH_SHORT);
+                        Snackbar registerSendEmailVerificationSuccessSnackBarOne = Snackbar.make(findViewById(R.id.activity_registration), "Successfully Registered", Snackbar.LENGTH_SHORT);
                         registerSendEmailVerificationSuccessSnackBarOne.show();
-                        Snackbar registerSendEmailVerificationSuccessSnackBarTwo = Snackbar.make(findViewById(R.id.activity_registration),"Verify Your Email Address",Snackbar.LENGTH_LONG);
+                        Snackbar registerSendEmailVerificationSuccessSnackBarTwo = Snackbar.make(findViewById(R.id.activity_registration), "Verify Your Email Address", Snackbar.LENGTH_LONG);
                         registerSendEmailVerificationSuccessSnackBarTwo.show();
                         mAuth.signOut();
                         finish();
                         Intent openLoginActivityFromRegistration = new Intent(RegistrationActivity.this, LoginActivity.class);
                         startActivity(openLoginActivityFromRegistration);
-                    }else{
-                        Snackbar registerSendEmailVerificationFailureSnackBar = Snackbar.make(findViewById(R.id.activity_registration),"Registration Failed",Snackbar.LENGTH_SHORT);
+                    } else {
+                        Snackbar registerSendEmailVerificationFailureSnackBar = Snackbar.make(findViewById(R.id.activity_registration), "Registration Failed", Snackbar.LENGTH_SHORT);
                         registerSendEmailVerificationFailureSnackBar.show();
 
                     }
@@ -185,12 +163,11 @@ public class RegistrationActivity extends AppCompatActivity {
         }
     }
 
-    private void sendUserData(){
+    private void sendUserData() {
 
         Name = userName.getText().toString();
         Email = userEmail.getText().toString();
         PhoneNo = userPhoneNo.getText().toString();
-
 
 
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
